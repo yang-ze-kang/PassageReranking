@@ -1,0 +1,24 @@
+name: pygaggle
+channels:
+  - defaults
+dependencies:
+  - _libgcc_mutex=0.1=main
+  - ca-certificates=2022.10.11=h06a4308_0
+  - certifi=2022.9.24=py38h06a4308_0
+  - ld_impl_linux-64=2.38=h1181459_1
+  - libffi=3.3=he6710b0_2
+  - libgcc-ng=9.1.0=hdf63c60_0
+  - libstdcxx-ng=9.1.0=hdf63c60_0
+  - ncurses=6.3=h7f8727e_2
+  - openssl=1.1.1s=h7f8727e_0
+  - pip=22.2.2=py38h06a4308_0
+  - python=3.8.13=h12debd9_0
+  - readline=8.1.2=h7f8727e_1
+  - setuptools=65.5.0=py38h06a4308_0
+  - sqlite=3.38.5=hc218d9a_0
+  - tk=8.6.12=h1ccaba5_0
+  - wheel=0.37.1=pyhd3eb1b0_0
+  - xz=5.2.5=h7f8727e_1
+  - zlib=1.2.12=h7f8727e_2
+prefix: /home/yzk/anaconda3/envs/pygaggle
+
