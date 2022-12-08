@@ -122,7 +122,7 @@ def one_step(model, inputs, gold, loss, acc, confusion_matrix):
     return t_loss
 
 
-def main(args, model_name, max_length, batch_size, num_samples, num_classes, epochs, learning_rate, epsilon, save_path):
+def main(args, model_name, max_length, batch_size, num_samples, epochs, learning_rate, epsilon, save_path):
     '''
     Load Hugging Face tokenizer and model
     '''
@@ -131,7 +131,7 @@ def main(args, model_name, max_length, batch_size, num_samples, num_classes, epo
     config = BertConfig.from_pretrained(model_name)
     bert = BertForSequenceClassification.from_pretrained(
         model_name, config=config)
-    model = Scorer(tokenizer, bert, max_length, num_classes, args.device)
+    model = Scorer(tokenizer, bert, max_length,  args.device)
     model = model.to(args.device)
     if args.freeze == True:
         for name, params in model.named_parameters():
@@ -331,5 +331,5 @@ if __name__ == "__main__":
     now_time = time.strftime('%Y-%m-%d-%H:%M:%S', time.localtime())
     save_path = os.path.join(args.save_path, args.model_name, now_time)
     os.makedirs(os.path.join(save_path))
-    main(args, args.model_name, args.max_length, args.batch_size, args.num_samples,
-         args.num_classes, args.epochs, args.learning_rate, args.epsilon, save_path)
+    main(args, args.model_name, args.max_length, args.batch_size,
+         args.num_samples, args.epochs, args.learning_rate, args.epsilon, save_path)

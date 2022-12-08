@@ -14,8 +14,7 @@ def main(args):
     config = BertConfig.from_pretrained(args.model_name)
     bert = BertForSequenceClassification.from_pretrained(
         args.model_name, config=config)
-    model = Scorer(tokenizer, bert, args.max_length,
-                   args.num_classes, args.device)
+    model = Scorer(tokenizer, bert, args.max_length, args.device)
     model.to(args.device)
     model.load_state_dict(torch.load(
         args.eval_weights, map_location=args.device), strict=False)
